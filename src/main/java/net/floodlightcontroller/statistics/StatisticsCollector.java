@@ -352,7 +352,8 @@ public class StatisticsCollector implements IFloodlightModule, IStatisticsServic
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	protected List<OFStatsReply> getSwitchStatistics(DatapathId switchId, OFStatsType statsType) {
+	@Override
+	public List<OFStatsReply> getSwitchStatistics(DatapathId switchId, OFStatsType statsType) {
 		IOFSwitch sw = switchService.getSwitch(switchId);
 		ListenableFuture<?> future;
 		List<OFStatsReply> values = null;
